@@ -86,3 +86,5 @@ class DetailPage extends StatelessWidget {
     );
   }
 }
+
+// fdfsdf
