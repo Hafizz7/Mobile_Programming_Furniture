@@ -86,3 +86,4 @@ class DetailPage extends StatelessWidget {
     );
   }
 }
+// sdsda
