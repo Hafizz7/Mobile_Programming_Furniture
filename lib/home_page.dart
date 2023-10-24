@@ -23,43 +23,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
   int currentIndex = 0;
   Widget build(BuildContext context) {
-    return Scaffold(
-      // bottomNavigationBar: BottomNavigationBar(
-      //   currentIndex: currentIndex,
-      //   onTap: (index) async {
-      //     setState(() {
-      //       currentIndex = index;
-      //     });
-      //     if (index == 2) {
-      //       final newData = await Navigator.push(
-      //         context,
-      //         MaterialPageRoute(
-      //           builder: (context) => Input_Page(),
-      //         ),
-      //       );
-      //       if (newData != null) {
-      //         setState(() {
-      //           furniture.add(newData);
-      //         });
-      //       }
-      //     } else if (index == 3) {
-      //       Navigator.push(context,
-      //           MaterialPageRoute(builder: ((context) => About_Page())));
-      //     }
-      //   },
-      //   type: BottomNavigationBarType.fixed,
-      //   items: const [
-      //     BottomNavigationBarItem(icon: Icon(Icons.home), label: "Home"),
-      //     BottomNavigationBarItem(
-      //         icon: Icon(Icons.favorite_border),
-      //         activeIcon: Icon(Icons.favorite),
-      //         label: "Favorites"),
-      //     BottomNavigationBarItem(
-      //         icon: Icon(Icons.add_circle_outline), label: "Add"),
-      //     BottomNavigationBarItem(
-      //         icon: Icon(Icons.person_outlined), label: "Settings"),
-      //   ],
-      // ),
+    return Scaffold(      
       body: ListView(
         children: [
           // Screen.elementAt(currentIndex),
@@ -390,7 +354,7 @@ class _MyHomePageState extends State<MyHomePage> {
               shrinkWrap: true,
               gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                 crossAxisCount: 2,
-                childAspectRatio: 0.70,
+                childAspectRatio: 0.80,
               ),
               itemCount: furniture.length,
               itemBuilder: (_, i) {
@@ -461,8 +425,7 @@ Widget buildContentItem(DaftarFurniture item) {
                         style: TextStyle(
                             fontSize: 15, fontWeight: FontWeight.bold)),
                     Text("${item.rating}"),
-                    Text("Rp. ${item.price.toStringAsFixed(2)}"),
-                    Text("${item.isEnlarged}"),
+                    Text("Rp. ${item.price.toStringAsFixed(2)}"),                    
                   ],
                 ),
               ),
