@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:furniture/detail.dart';
+
 // bool isEnlarged = false;
 void main() {
   runApp(const MyHomePage());
@@ -14,7 +15,7 @@ class MyHomePage extends StatefulWidget {
   State<MyHomePage> createState() => _MyHomePageState();
 }
 
-class _MyHomePageState extends State<MyHomePage> {  
+class _MyHomePageState extends State<MyHomePage> {
   void onDataAdded(DaftarFurniture newData) {
     setState(() {
       furniture.add(newData);
@@ -23,7 +24,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
   int currentIndex = 0;
   Widget build(BuildContext context) {
-    return Scaffold(      
+    return Scaffold(
       body: ListView(
         children: [
           // Screen.elementAt(currentIndex),
@@ -360,17 +361,11 @@ class _MyHomePageState extends State<MyHomePage> {
               itemBuilder: (_, i) {
                 return InkWell(
                   onTap: () {
-                    
-                    // Di sini, Anda dapat menggunakan nilai i untuk mengidentifikasi item yang diklik.
-                    // Anda dapat mengakses item dengan furniture[i].
-                    // Misalnya: DaftarFurniture itemDiklik = furniture[i];
-                    // Lakukan sesuatu dengan itemDiklik di sini.
-                     Navigator.of(context).push(MaterialPageRoute(
-    builder: (context) => DetailPage(item: furniture[i]),
-  ));
-                  },              
-                  child: buildContentItem(furniture[i]),                  
-                  
+                    Navigator.of(context).push(MaterialPageRoute(
+                      builder: (context) => DetailPage(item: furniture[i]),
+                    ));
+                  },
+                  child: buildContentItem(furniture[i]),
                 );
               },
             ),
@@ -381,7 +376,7 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 }
 
-Widget buildContentItem(DaftarFurniture item) {  
+Widget buildContentItem(DaftarFurniture item) {
   return IntrinsicHeight(
     // margin: EdgeInsets.all(2),
     // padding: EdgeInsets.all(2),
@@ -399,17 +394,19 @@ Widget buildContentItem(DaftarFurniture item) {
           child: Column(
             children: [
               Container(
-                padding: const EdgeInsets.all(5.0),                
-                  child: AnimatedContainer(                
-                    duration: Duration(milliseconds: 500),
-                    curve: Curves.easeIn,
-                    width: item.isEnlarged? 800: 200, // Atur lebar gambar saat diperbesar
-                    // height: isEnlarged ? 3000 : 5000, // Atur tinggi gambar saat diperbesar
-                    child: Image.asset(
-                      item.imageAsset,
-                      width: 200,
-                    ),
-                  ),                
+                padding: const EdgeInsets.all(5.0),
+                child: AnimatedContainer(
+                  duration: Duration(milliseconds: 500),
+                  curve: Curves.easeIn,
+                  width: item.isEnlarged
+                      ? 800
+                      : 200, // Atur lebar gambar saat diperbesar
+                  // height: isEnlarged ? 3000 : 5000, // Atur tinggi gambar saat diperbesar
+                  child: Image.asset(
+                    item.imageAsset,
+                    width: 200,
+                  ),
+                ),
               ),
               Container(
                 margin: EdgeInsets.only(left: 10, top: 6),
@@ -425,7 +422,7 @@ Widget buildContentItem(DaftarFurniture item) {
                         style: TextStyle(
                             fontSize: 15, fontWeight: FontWeight.bold)),
                     Text("${item.rating}"),
-                    Text("Rp. ${item.price.toStringAsFixed(2)}"),                    
+                    Text("Rp. ${item.price.toStringAsFixed(2)}"),
                   ],
                 ),
               ),
@@ -445,15 +442,13 @@ class DaftarFurniture {
   final double price;
   final String deskripsi;
 
-  DaftarFurniture({
-    required this.imageAsset,
-    required this.name,
-    required this.rating,
-    required this.price,
-    required this.deskripsi
-  });
+  DaftarFurniture(
+      {required this.imageAsset,
+      required this.name,
+      required this.rating,
+      required this.price,
+      required this.deskripsi});
   void toggleEnlarged() {
     isEnlarged = !isEnlarged;
   }
 }
-
