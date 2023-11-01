@@ -50,8 +50,9 @@ class _BottomNavScreenState extends State<BottomNavScreen> {
             icon: Icon(CupertinoIcons.person), // Mengganti ikon ke CupertinoIcons
             label: "About",
           ),
-        ],
-      ),
+        ],        
+        activeColor: Theme.of(context).iconTheme.color
+      ),      
     );
   }
 }
