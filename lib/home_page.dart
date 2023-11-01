@@ -8,7 +8,7 @@ void main() {
 
 final List<DaftarFurniture> furniture = []; // List untuk menyimpan kursi-kursi
 
-class MyHomePage extends StatefulWidget {
+class MyHomePage extends StatefulWidget {  
   const MyHomePage({super.key});
 
   @override
@@ -23,7 +23,7 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 
   int currentIndex = 0;
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context) {    
     return Scaffold(
       body: ListView(
         children: [
@@ -48,7 +48,7 @@ class _MyHomePageState extends State<MyHomePage> {
               height: MediaQuery.of(context).size.height * 0.06,
               width: MediaQuery.of(context).size.width * 0.26,
               decoration: ShapeDecoration(
-                color: Color.fromARGB(255, 255, 254, 254),
+                // color: Color.fromARGB(255, 255, 254, 254),
                 shape: RoundedRectangleBorder(
                     side: BorderSide(width: 1),
                     borderRadius: BorderRadius.circular(9)),
@@ -96,7 +96,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     Container(
                       height: MediaQuery.of(context).size.height * 0.08,
                       decoration: BoxDecoration(
-                        border: Border.all(width: 1),
+                        border: Border.all(width: 1, color: Theme.of(context).indicatorColor),
                         shape: BoxShape.circle,
                         // color: Colors.black,
                       ),
@@ -105,12 +105,30 @@ class _MyHomePageState extends State<MyHomePage> {
                         child: Container(
                           width: 80,
                           height: MediaQuery.of(context).size.height * 0.05,
-                          decoration: BoxDecoration(
-                            shape: BoxShape.circle,
-                            color: Colors.white,
-                            image: const DecorationImage(
-                              image: AssetImage("assets/seater-sofa.png"),
-                            ),
+                          child: Icon(
+                            Icons.bed_rounded,
+                            size: 40,
+                            color: Theme.of(context).indicatorColor,
+                          ),                          
+                        ),
+                      ),
+                    ),
+                    Container(
+                      height: MediaQuery.of(context).size.height * 0.08,
+                      decoration: BoxDecoration(
+                        border: Border.all(width: 1, color: Theme.of(context).indicatorColor),
+                        shape: BoxShape.circle,
+                        // color: Colors.black,
+                      ),
+                      child: Padding(
+                        padding: const EdgeInsets.only(top: 4, bottom: 4),
+                        child: Container(
+                          width: 80,
+                          height: MediaQuery.of(context).size.height * 0.05,
+                          child: Icon(
+                            Icons.chair_outlined ,
+                            size: 40,
+                            color: Theme.of(context).indicatorColor,
                           ),
                         ),
                       ),
@@ -118,7 +136,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     Container(
                       height: MediaQuery.of(context).size.height * 0.08,
                       decoration: BoxDecoration(
-                        border: Border.all(width: 1),
+                        border: Border.all(width: 1, color: Theme.of(context).indicatorColor),
                         shape: BoxShape.circle,
                         // color: Colors.black,
                       ),
@@ -127,12 +145,10 @@ class _MyHomePageState extends State<MyHomePage> {
                         child: Container(
                           width: 80,
                           height: MediaQuery.of(context).size.height * 0.05,
-                          decoration: BoxDecoration(
-                            shape: BoxShape.circle,
-                            color: Colors.white,
-                            image: const DecorationImage(
-                              image: AssetImage("assets/seater-sofa.png"),
-                            ),
+                          child: Icon(
+                            Icons.table_bar_outlined ,
+                            size: 40,
+                            color: Theme.of(context).indicatorColor,
                           ),
                         ),
                       ),
@@ -140,7 +156,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     Container(
                       height: MediaQuery.of(context).size.height * 0.08,
                       decoration: BoxDecoration(
-                        border: Border.all(width: 1),
+                        border: Border.all(width: 1, color: Theme.of(context).indicatorColor),
                         shape: BoxShape.circle,
                         // color: Colors.black,
                       ),
@@ -149,12 +165,10 @@ class _MyHomePageState extends State<MyHomePage> {
                         child: Container(
                           width: 80,
                           height: MediaQuery.of(context).size.height * 0.05,
-                          decoration: BoxDecoration(
-                            shape: BoxShape.circle,
-                            color: Colors.white,
-                            image: const DecorationImage(
-                              image: AssetImage("assets/seater-sofa.png"),
-                            ),
+                          child: Icon(
+                            Icons.bathtub_outlined,
+                            size: 40,
+                            color: Theme.of(context).indicatorColor,
                           ),
                         ),
                       ),
@@ -162,7 +176,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     Container(
                       height: MediaQuery.of(context).size.height * 0.08,
                       decoration: BoxDecoration(
-                        border: Border.all(width: 1),
+                        border: Border.all(width: 1, color: Theme.of(context).indicatorColor),
                         shape: BoxShape.circle,
                         // color: Colors.black,
                       ),
@@ -171,34 +185,10 @@ class _MyHomePageState extends State<MyHomePage> {
                         child: Container(
                           width: 80,
                           height: MediaQuery.of(context).size.height * 0.05,
-                          decoration: BoxDecoration(
-                            shape: BoxShape.circle,
-                            color: Colors.white,
-                            image: const DecorationImage(
-                              image: AssetImage("assets/seater-sofa.png"),
-                            ),
-                          ),
-                        ),
-                      ),
-                    ),
-                    Container(
-                      height: MediaQuery.of(context).size.height * 0.08,
-                      decoration: BoxDecoration(
-                        border: Border.all(width: 1),
-                        shape: BoxShape.circle,
-                        // color: Colors.black,
-                      ),
-                      child: Padding(
-                        padding: const EdgeInsets.only(top: 4, bottom: 4),
-                        child: Container(
-                          width: 80,
-                          height: MediaQuery.of(context).size.height * 0.05,
-                          decoration: BoxDecoration(
-                            shape: BoxShape.circle,
-                            color: Colors.white,
-                            image: const DecorationImage(
-                              image: AssetImage("assets/seater-sofa.png"),
-                            ),
+                          child: Icon(
+                            Icons.flatware_rounded,
+                            size: 40,
+                            color: Theme.of(context).indicatorColor,
                           ),
                         ),
                       ),
@@ -214,15 +204,9 @@ class _MyHomePageState extends State<MyHomePage> {
           SizedBox(height: 10),
           Container(
             margin: EdgeInsets.only(left: 20),
-            child: const Text(
+            child: Text(
               "Trending Furniture",
-              style: TextStyle(
-                color: Colors.black,
-                fontSize: 16,
-                fontFamily: 'Inter',
-                fontWeight: FontWeight.w500,
-                height: 0,
-              ),
+              style: Theme.of(context).textTheme.bodyMedium,
             ),
           ),
           Container(
@@ -237,21 +221,27 @@ class _MyHomePageState extends State<MyHomePage> {
                         height: MediaQuery.of(context).size.height * 0.14,
                         width: MediaQuery.of(context).size.width * 0.5,
                         decoration: BoxDecoration(
-                          border: Border.all(width: 1),
-                          borderRadius: BorderRadius.circular(20),
+                          border: Border.all(width: 2, color: Theme.of(context).indicatorColor),
+                          borderRadius: BorderRadius.circular(20),                          
+                          image:  DecorationImage(
+                                image: NetworkImage("https://iili.io/JfZf7aI.png"),
+                                fit: BoxFit.fill,
+                              ),
                           // color: Colors.black,
                         ),
-                        child: Padding(
-                          padding: const EdgeInsets.only(top: 4, bottom: 4),
-                          child: Container(
-                            width: 80,
-                            height: MediaQuery.of(context).size.height * 0.05,
-                            decoration: BoxDecoration(
-                              color: Colors.white,
-                              image: const DecorationImage(
-                                image: AssetImage("assets/seater-sofa.png"),
-                              ),
-                            ),
+                        ),                      
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Container(
+                        height: MediaQuery.of(context).size.height * 0.14,
+                        width: MediaQuery.of(context).size.width * 0.5,
+                        decoration: BoxDecoration(
+                          border: Border.all(width: 2, color: Theme.of(context).indicatorColor),
+                          borderRadius: BorderRadius.circular(20),
+                          image:  DecorationImage(
+                            image: NetworkImage("https://iili.io/JfZCxje.png"),
+                            fit: BoxFit.fill,
                           ),
                         ),
                       ),
@@ -262,23 +252,14 @@ class _MyHomePageState extends State<MyHomePage> {
                         height: MediaQuery.of(context).size.height * 0.14,
                         width: MediaQuery.of(context).size.width * 0.5,
                         decoration: BoxDecoration(
-                          border: Border.all(width: 1),
+                          border: Border.all(width: 2, color: Theme.of(context).indicatorColor),
                           borderRadius: BorderRadius.circular(20),
-                          // color: Colors.black,
-                        ),
-                        child: Padding(
-                          padding: const EdgeInsets.only(top: 4, bottom: 4),
-                          child: Container(
-                            width: 80,
-                            height: MediaQuery.of(context).size.height * 0.05,
-                            decoration: BoxDecoration(
-                              color: Colors.white,
-                              image: const DecorationImage(
-                                image: AssetImage("assets/seater-sofa.png"),
-                              ),
-                            ),
+                          image:  DecorationImage(
+                            image: NetworkImage("https://iili.io/JfZCzZu.png"),
+                            fit: BoxFit.fill,
                           ),
-                        ),
+                          // color: Colors.black,
+                        ),                        
                       ),
                     ),
                     Padding(
@@ -287,48 +268,14 @@ class _MyHomePageState extends State<MyHomePage> {
                         height: MediaQuery.of(context).size.height * 0.14,
                         width: MediaQuery.of(context).size.width * 0.5,
                         decoration: BoxDecoration(
-                          border: Border.all(width: 1),
+                          border: Border.all(width: 2, color: Theme.of(context).indicatorColor),
                           borderRadius: BorderRadius.circular(20),
-                          // color: Colors.black,
-                        ),
-                        child: Padding(
-                          padding: const EdgeInsets.only(top: 4, bottom: 4),
-                          child: Container(
-                            width: 80,
-                            height: MediaQuery.of(context).size.height * 0.05,
-                            decoration: BoxDecoration(
-                              color: Colors.white,
-                              image: const DecorationImage(
-                                image: AssetImage("assets/seater-sofa.png"),
-                              ),
-                            ),
+                          image:  DecorationImage(
+                            image: NetworkImage("https://iili.io/JfZCou9.png"),
+                            fit: BoxFit.fill,
                           ),
-                        ),
-                      ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Container(
-                        height: MediaQuery.of(context).size.height * 0.14,
-                        width: MediaQuery.of(context).size.width * 0.5,
-                        decoration: BoxDecoration(
-                          border: Border.all(width: 1),
-                          borderRadius: BorderRadius.circular(20),
                           // color: Colors.black,
-                        ),
-                        child: Padding(
-                          padding: const EdgeInsets.only(top: 4, bottom: 4),
-                          child: Container(
-                            width: 80,
-                            height: MediaQuery.of(context).size.height * 0.05,
-                            decoration: BoxDecoration(
-                              color: Colors.white,
-                              image: const DecorationImage(
-                                image: AssetImage("assets/seater-sofa.png"),
-                              ),
-                            ),
-                          ),
-                        ),
+                        ),                        
                       ),
                     ),
                   ],
@@ -340,13 +287,7 @@ class _MyHomePageState extends State<MyHomePage> {
             margin: EdgeInsets.only(left: 20),
             child: Text(
               'All Product',
-              style: TextStyle(
-                color: Colors.black,
-                fontSize: 16,
-                fontFamily: 'Inter',
-                fontWeight: FontWeight.w500,
-                height: 0,
-              ),
+              style: Theme.of(context).textTheme.bodyMedium,
             ),
           ),
           Container(
@@ -371,12 +312,12 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
           ),
         ],
-      ),
-    );
+      ),            
+    );        
   }
 }
 
-Widget buildContentItem(DaftarFurniture item) {
+Widget buildContentItem(DaftarFurniture item) {  
   return IntrinsicHeight(
     // margin: EdgeInsets.all(2),
     // padding: EdgeInsets.all(2),
@@ -389,6 +330,7 @@ Widget buildContentItem(DaftarFurniture item) {
           decoration: BoxDecoration(
             border: Border.all(width: 1),
             borderRadius: BorderRadius.circular(10),
+            
           ),
 
           child: Column(

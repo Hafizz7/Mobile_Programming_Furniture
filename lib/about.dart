@@ -46,52 +46,28 @@ class _About_PageState extends State<About_Page> {
                       ),                                            
                     ),
                     Container(
-                      child: const Column(
+                      child: Column(
                         children: [
                           SizedBox(height: 18),
                           Text(
                             'Muh. Hafiz',
-                            style: TextStyle(
-                              color: Colors.black,
-                              fontSize: 25,
-                              fontFamily: 'Inter',
-                              fontWeight: FontWeight.w600,
-                              height: 0,
-                            ),
+                            style: Theme.of(context).textTheme.bodyMedium,
                           ),
                           SizedBox(height: 18),
                           Text(
                             '2109106045',
-                            style: TextStyle(
-                              color: Colors.black,
-                              fontSize: 18,
-                              fontFamily: 'Inter',
-                              fontWeight: FontWeight.w400,
-                              height: 0,
-                            ),
+                            style: Theme.of(context).textTheme.bodyMedium,
                           ),
                           SizedBox(height: 18),
                           Text(
                             'A’21',
-                            style: TextStyle(
-                              color: Colors.black,
-                              fontSize: 18,
-                              fontFamily: 'Inter',
-                              fontWeight: FontWeight.w400,
-                              height: 0,
-                            ),
+                            style: Theme.of(context).textTheme.bodyMedium,
                           ),
                           SizedBox(height: 18),
                           Text(
                             "Jangan Mencari Kebenaran di Balik Kesalahan",
                             textAlign: TextAlign.center,
-                            style: TextStyle(
-                              color: Colors.black,
-                              fontSize: 18,
-                              fontFamily: 'Inter',
-                              fontWeight: FontWeight.w400,
-                              height: 0,
-                            ),
+                            style: Theme.of(context).textTheme.bodyMedium,
                           )
                         ],
                       ),
