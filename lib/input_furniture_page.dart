@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:furniture/bottom_nav.dart';
 import 'package:furniture/main.dart';
+import 'package:furniture/provider/provider.dart';
+import 'package:provider/provider.dart';
 import 'home_page.dart';
 
 class Input_Page extends StatefulWidget {
@@ -19,6 +21,7 @@ class _Input_PageState extends State<Input_Page> {
   TextEditingController harga = TextEditingController();
   @override
   Widget build(BuildContext context) {
+    final statusProvider = Provider.of<StatusProvider>(context);    
     Future<dynamic> alert(BuildContext context, String judul, String konten) {
       return showDialog(
           context: context,
@@ -29,6 +32,7 @@ class _Input_PageState extends State<Input_Page> {
               actions: [
                 TextButton(
                     onPressed: () {
+                      statusProvider.updateCurrentIndex(0);
                       // Tambahkan kursi baru ke dalam list
                       DaftarFurniture newFurniture = DaftarFurniture(
                         imageAsset: "assets/pngegg (2).png",
@@ -41,10 +45,10 @@ class _Input_PageState extends State<Input_Page> {
                       // (newSeat);
                       furniture.add(newFurniture);
 
-                      Navigator.push(
+                      Navigator.push(                        
                         context,
                         MaterialPageRoute(
-                          builder: (context) => const BottomNavScreen(),
+                          builder: (context) => BottomNavScreen(),
                         ),
                       );
                       nama_kursi.clear();

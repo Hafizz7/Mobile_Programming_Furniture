@@ -8,21 +8,13 @@ void main() {
 
 final List<DaftarFurniture> furniture = []; // List untuk menyimpan kursi-kursi
 
-class MyHomePage extends StatefulWidget {  
+class MyHomePage extends StatelessWidget {  
   const MyHomePage({super.key});
 
   @override
-  State<MyHomePage> createState() => _MyHomePageState();
-}
+  // State<MyHomePage> createState() => _MyHomePageState();
 
-class _MyHomePageState extends State<MyHomePage> {
-  void onDataAdded(DaftarFurniture newData) {
-    setState(() {
-      furniture.add(newData);
-    });
-  }
-
-  int currentIndex = 0;
+  
   Widget build(BuildContext context) {    
     return Scaffold(
       body: ListView(
@@ -52,17 +44,17 @@ class _MyHomePageState extends State<MyHomePage> {
                 shape: RoundedRectangleBorder(
                     side: BorderSide(width: 1),
                     borderRadius: BorderRadius.circular(9)),
-                shadows: const [
-                  BoxShadow(
-                    color: Color(0x3F000000),
-                    blurRadius: 4,
-                    offset: Offset(0, 4),
-                    spreadRadius: 0,
-                  )
-                ],
+                // shadows: const [
+                //   BoxShadow(
+                //     color: Color(0x3F000000),
+                //     blurRadius: 4,
+                //     offset: Offset(0, 4),
+                //     spreadRadius: 0,
+                //   )
+                // ],
               ),
               child: TextField(
-                  decoration: const InputDecoration(
+                  decoration: const InputDecoration(                    
                     hintText: 'Cari...',
                     prefixIcon: Icon(Icons.search),
                   ),

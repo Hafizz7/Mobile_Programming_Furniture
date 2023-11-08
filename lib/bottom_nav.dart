@@ -1,20 +1,19 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:furniture/provider/provider.dart';
+import 'package:provider/provider.dart';
 import 'Favorite.dart';
 import 'input_furniture_page.dart';
 import 'home_page.dart';
 import 'about.dart';
 
-class BottomNavScreen extends StatefulWidget {
-  const BottomNavScreen();
+class BottomNavScreen extends StatelessWidget {
+  // const BottomNavScreen();
 
-  @override
-  _BottomNavScreenState createState() => _BottomNavScreenState();
-}
-
-class _BottomNavScreenState extends State<BottomNavScreen> {
-  int currentIndex = 0;
-
+  // @override
+  // _BottomNavScreenState createState() => _BottomNavScreenState();
+  // int currentIndex = 0;
+  
   final List<Widget> screens = [
     MyHomePage(),
     Favorite_Page(),
@@ -23,31 +22,36 @@ class _BottomNavScreenState extends State<BottomNavScreen> {
   ];
 
   @override
+  
+      
   Widget build(BuildContext context) {
+    
+    final statusProvider = Provider.of<StatusProvider>(context);
     return Scaffold(
-      body: screens[currentIndex],
-      bottomNavigationBar: CupertinoTabBar( // Mengganti BottomNavigationBar menjadi CupertinoTabBar
-        currentIndex: currentIndex,
+      body: screens[statusProvider.currentIndex],
+      bottomNavigationBar: CupertinoTabBar(
+        currentIndex: statusProvider.currentIndex,
         onTap: (index) {
-          setState(() {
-            currentIndex = index;
-          });
+          statusProvider.updateCurrentIndex(index);
+          // setState(() {
+          //   currentIndex = index;
+          // });
         },
         items: const [
           BottomNavigationBarItem(
-            icon: Icon(CupertinoIcons.home), // Mengganti ikon ke CupertinoIcons
+            icon: Icon(CupertinoIcons.home),
             label: "Home",
           ),
           BottomNavigationBarItem(
-            icon: Icon(CupertinoIcons.heart), // Mengganti ikon ke CupertinoIcons
+            icon: Icon(CupertinoIcons.heart),
             label: "Favorites",
           ),
           BottomNavigationBarItem(
-            icon: Icon(CupertinoIcons.add), // Mengganti ikon ke CupertinoIcons
+            icon: Icon(CupertinoIcons.add),
             label: "Add",
           ),
           BottomNavigationBarItem(
-            icon: Icon(CupertinoIcons.person), // Mengganti ikon ke CupertinoIcons
+            icon: Icon(CupertinoIcons.person),
             label: "About",
           ),
         ],        
